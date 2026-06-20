@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    private const int NoCubesRemaining = 0;
+
     [Header("Компоненты")]
     [SerializeField] private CubeManager _cubeManager;
 
@@ -30,7 +32,7 @@ public class GameManager : MonoBehaviour
             RestartGame();
         }
 
-        if (_autoRestart && _cubeManager != null && _cubeManager.GetActiveCubesCount() == 0)
+        if (_autoRestart && _cubeManager != null && _cubeManager.GetActiveCubesCount() == NoCubesRemaining)
         {
             Invoke(nameof(RestartGame), _restartDelay);
         }
