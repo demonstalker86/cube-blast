@@ -2,9 +2,12 @@
 
 [![Unity Version](https://img.shields.io/badge/Unity-6.4-blue)](https://unity.com/)
 [![License](https://img.shields.io/badge/License-MIT-green)](LICENSE)
+[![Platform](https://img.shields.io/badge/Platform-PC%20%7C%20Android-blue)](https://github.com/demonstalker86/cube-blast)
 
 ## 🎮 Description
 A Unity game where cubes split and explode with physics. Click on a cube to make it disappear and spawn new cubes with random colors and sizes.
+
+**Supported platforms:** PC (Windows, Mac, Linux) and Android.
 
 ## ✨ Features
 - 🎯 Click on cube → disappears and spawns new cubes
@@ -17,12 +20,12 @@ A Unity game where cubes split and explode with physics. Click on a cube to make
 - 📱 Supports PC and mobile devices
 
 ## 🎯 Gameplay
-1. Click on a cube
-2. The cube disappears
-3. Split chance is checked:
-   - Success: new cubes appear (2-6 pieces) with explosion
-   - Failure: cube simply disappears
-4. The process repeats with each new cube
+Click on a cube
+The cube disappears
+Split chance is checked:
+Success: new cubes appear (2-6 pieces) with explosion
+Failure: cube simply disappears
+The process repeats with each new cube
 
 ## 🛠 Technologies
 - **Unity 6.4**
@@ -34,39 +37,63 @@ A Unity game where cubes split and explode with physics. Click on a cube to make
 | Platform | Action |
 |----------|--------|
 | PC | Mouse click on cube |
-| Mobile | Tap on cube |
+| Mobile (Android) | Tap on cube |
+
+## 🌿 Branches
+This repository uses separate branches for different platforms:
+
+- **`main`** - PC version (default)
+- **`android-build`** - Android version with mobile optimizations
 
 ## 🔧 Installation
 
-### Clone repository
-```bash
-https://github.com/demonstalker86/cube-blast
+Clone repository
 
-Open in Unity
+git clone https://github.com/demonstalker86/cube-blast.git
+
+PC Version (main branch)
+Switch to `main` branch:
 
 Open Unity Hub
-Click Open Project
+Click **Open Project**
 Select the project folder
-Open scene Assets/Scenes/MainScene.unity
+Open scene `Assets/Scenes/MainScene.unity`
 
-📁 Project Structure
+Android Version (android-build branch)
+Switch to `android-build` branch:
+
+git checkout android-build
+
+Open Unity Hub
+Click **Open Project**
+Select the project folder
+Open scene `Assets/Scenes/MainScene.unity`
+Build for Android: **File** → **Build Profiles** → **Android** → **Build and Run**
+
+## 📁 Project Structure
 
 cube-blast/
 ├── Assets/
-│   ├── Scripts/
-│   │   ├── InputHandler.cs      # Input handling
-│   │   ├── CubeController.cs    # Cube behavior
-│   │   ├── CubeManager.cs       # Cube management
-│   │   └── GameManager.cs       # Game management
-│   ├── Prefabs/
-│   │   └── CubePrefab.prefab    # Cube prefab
-│   └── Scenes/
-│       └── MainScene.unity      # Main scene
-└── ProjectSettings/             # Unity settings
+│ ├── Scripts/
+│ │ ├── InputHandler.cs # Input handling
+│ │ ├── CubeController.cs # Cube behavior
+│ │ ├── CubeManager.cs # Cube management
+│ │ └── GameManager.cs # Game management
+│ ├── Prefabs/
+│ │ └── CubePrefab.prefab # Cube prefab
+│ └── Scenes/
+│ └── MainScene.unity # Main scene
+└── ProjectSettings/ # Unity settings
 
-📄 License
-Distributed under the MIT License. See LICENSE for more information.
+## 📄 License
+MIT
 
-👤 Author
+## 👤 Author
 
-GitHub: @demonstalker86
+**demonstalker86**
+
+- GitHub: [@demonstalker86](https://github.com/demonstalker86)
+
+---
+
+⭐ If you like this project, give it a star on GitHub!
