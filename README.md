@@ -54,6 +54,8 @@ git clone https://github.com/demonstalker86/cube-blast.git
 PC Version (main branch)
 Switch to `main` branch:
 
+git checkout main
+
 Open Unity Hub
 Click **Open Project**
 Select the project folder
@@ -75,12 +77,16 @@ Build for Android: **File** → **Build Profiles** → **Android** → **Build a
 cube-blast/
 ├── Assets/
 │ ├── Scripts/
-│ │ ├── InputHandler.cs # Input handling
-│ │ ├── CubeController.cs # Cube behavior
-│ │ ├── CubeManager.cs # Cube management
-│ │ └── GameManager.cs # Game management
+│ │ ├── Config.cs # Centralized settings
+│ │ ├── InputListener.cs # Input handling
+│ │ ├── Raycaster.cs # Raycast to detect cubes
+│ │ ├── Cube.cs # Cube behavior
+│ │ ├── ColorGenerator.cs # Random color generation
+│ │ ├── Spawner.cs # Object spawning
+│ │ ├── Exploder.cs # Explosion force
+│ │ └── GameFlow.cs # Main game logic
 │ ├── Prefabs/
-│ │ └── CubePrefab.prefab # Cube prefab
+│ │ └── Cube.prefab # Cube prefab
 │ └── Scenes/
 │ └── MainScene.unity # Main scene
 └── ProjectSettings/ # Unity settings
