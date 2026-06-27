@@ -15,6 +15,7 @@ A Unity game where cubes split and explode with physics. Click on a cube to make
 - 📏 Each new cube is 2x smaller than the previous one
 - 🎨 Random color for each cube
 - 💥 Explosion force from the center of the disappeared cube
+- 💥 Explosion on failed split — cube explodes and pushes nearby cubes
 - 📉 Split chance decreases by 2x each time (100% → 50% → 25%...)
 - 🚧 Invisible walls to limit cube flight
 - 📱 Supports PC and mobile devices
@@ -23,8 +24,8 @@ A Unity game where cubes split and explode with physics. Click on a cube to make
 Click on a cube
 The cube disappears
 Split chance is checked:
-Success: new cubes appear (2-6 pieces) with explosion
-Failure: cube simply disappears
+- Success: new cubes appear (2-6 pieces)
+- Failure: cube explodes, pushing nearby cubes
 The process repeats with each new cube
 
 ## 🛠 Technologies

@@ -13,6 +13,9 @@ public class GameFlow : MonoBehaviour
     private const int MaxExclusiveOffset = 1;
     private const int LevelIncrement = 1;
     private const int InitialObjectsCountPerSpawn = 1;
+    private const int MinimumCubesForExplosion = 1;
+    private const float MaxExplosionForce = 300f;
+    private const float MaxExplosionRadius = 5f;
 
     [SerializeField] private Config _config;
     [SerializeField] private Spawner _spawner;
@@ -66,10 +69,19 @@ public class GameFlow : MonoBehaviour
             int newLevel = currentLevel + LevelIncrement;
 
             _spawner.SpawnObjects(center, newScale, newLevel, count);
-            
-            List<Cube> newObjects = _spawner.GetActiveObjects();
+        }
+        else
+        {
+            List<Cube> nearbyCubes = _spawner.GetActiveObjects();
 
-            _exploder.ApplyExplosion(center, newObjects, _config.ExplosionForce, _config.ExplosionRadius, _config.UpwardsModifier);
+            if (nearbyCubes.Count >= MinimumCubesForExplosion)
+            {
+                float explosionForce = Mathf.Min(_config.ExplosionForce / currentScale, MaxExplosionForce);
+
+                float explosionRadius = Mathf.Min(_config.ExplosionRadius / currentScale, MaxExplosionRadius);
+
+                _exploder.ApplyExplosion(center, nearbyCubes, explosionForce, explosionRadius, _config.UpwardsModifier);
+            }
         }
     }
 }

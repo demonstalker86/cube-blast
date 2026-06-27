@@ -6,7 +6,7 @@ public class Config : ScriptableObject
     [Header("Физика")]
     [SerializeField] private float _mass = 1f;
     [SerializeField] private float _linearDamping = 2f;
-    [SerializeField] private float _angularDamping = 2f;
+    [SerializeField] private float _angularDamping = 0.5f;
 
     [Header("Разделение")]
     [SerializeField] private int _minObjectsToSpawn = 2;
